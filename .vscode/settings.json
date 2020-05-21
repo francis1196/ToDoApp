@@ -1,0 +1,4 @@
+{
+    "appService.preDeployTask": "publish-release",
+    "appService.deploySubpath": "ToDoAppHD/bin/Release/netcoreapp3.1/publish"
+}

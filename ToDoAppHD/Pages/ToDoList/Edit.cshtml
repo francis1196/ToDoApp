@@ -1,0 +1,96 @@
+﻿@page
+@model ToDoAppHD.Pages.ToDoList.EditModel
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<br />
+<h2 class="text-info">Editar Curso</h2>
+
+<div class="border">
+    <form method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="toDoModel.ID" />
+        <div class="container" style="padding:30px;">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <label asp-for="toDoModel.Title"></label>
+                    </div>
+                    <div class="col-sm-4">
+                        <input asp-for="toDoModel.Title" class="form-control" />
+                    </div>
+                    <span asp-validation-for="toDoModel.Title" class="text-danger"></span>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-sm-2">
+                        <label asp-for="toDoModel.Description"></label>
+                    </div>
+                    <div class="col-sm-4">
+                        <input asp-for="toDoModel.Description" class="form-control" />
+                    </div>
+                    <span asp-validation-for="toDoModel.Description" class="text-danger"></span>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-sm-2">
+                        <label asp-for="toDoModel.Date"></label>
+                    </div>
+                    <div class="col-sm-4">
+                        <input asp-for="toDoModel.Date" class="form-control" type="date" />
+                    </div>
+                    <span asp-validation-for="toDoModel.Date" class="text-danger"></span>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-sm-2">
+                        <label asp-for="toDoModel.Priority"></label>
+                    </div>
+                    <div class="col-sm-4">
+                        <input asp-for="toDoModel.Priority" class="form-control" />
+                    </div>
+                    <span asp-validation-for="toDoModel.Priority" class="text-danger"></span>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-sm-2">
+                        <label asp-for="toDoModel.Status"></label>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input class="form-check-input" asp-for="toDoModel.Status" type="checkbox" id="gridCheck">
+                                <label class="form-check-label" for="gridCheck">
+                                    Task completed
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <span asp-validation-for="toDoModel.Status" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-2 offset-sm-2">
+                        <input type="submit" value="Editar" class="btn btn-primary form-control">
+                    </div>
+                    <div class="col-sm-2">
+                        <a asp-page="Index" class="btn btn-success form-control">Volver a Lista</a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+    </form>
+</div>
+
+@section Scripts{
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+
